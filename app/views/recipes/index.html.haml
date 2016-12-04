@@ -1,0 +1,16 @@
+-@recipes.each_slice(3) do |three_recipes|
+  .row
+    -three_recipes.each do |recipe|
+      .col-md-4
+        .recipe
+          .image_wrapper
+            =link_to recipe do
+              =image_tag recipe.image.url( :medium )
+          %h2
+            =link_to recipe.title, recipe
+            -# CAREFUL !!!
+            -# as features are added, do old records have the expected data ??? 
+            -# when .user is nil then recipe.user == current_user is true for unsigned visitors
+            -if recipe.user == current_user
+              =link_to 'Edit', edit_recipe_path( recipe ), class:'btn btn-default'
+              =link_to 'Delete', recipe, method:'delete', data:{ confirm:'Are you sure?' }, class:'btn btn-default'
