@@ -1,0 +1,3 @@
+11-28-16:
+White spaces in empty textareas by cocoon. Spent at least two hours looking for a solution:
+http://stackoverflow.com/questions/16691913/input-from-textarea-has-weird-spaces-prepended-to-each-line-in-simple-form-and-h
